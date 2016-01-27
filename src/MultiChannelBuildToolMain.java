@@ -57,10 +57,14 @@ public class MultiChannelBuildToolMain {
 			        	newApkName = "f1l_v"+version+"_"+split[1]+".apk";
 			        }
 			        System.out.println("newApkName " + newApkName);
+			      //方法1. 可以通过为zip包加注释进行多渠道打包
+					 //zipFile.setComment(newApkPath+File.separator+channels[i]); 
+			      //方法2. 可以通过写空文件进行多渠道打包
 				 channelFile = new File(newApkPath+File.separator+channels[i]);
 				 if (!channelFile.exists()) {
 					 channelFile.createNewFile();
 				 }
+				 
 				 System.out.println("channelFile " + channelFile.getAbsolutePath());
 				 zipFile.addFile(channelFile, parameters);
 				 FileUtils.copyFile(zipFile.getFile(), new File(newApkPath+File.separator+newApkName));
