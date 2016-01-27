@@ -1,0 +1,2 @@
+# AndroidMultiChannelBuildTool-Java
+安卓多渠道打包工具java版本
